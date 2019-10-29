@@ -1,0 +1,10 @@
+body {
+    margin: 0;
+}
+
+/* This rule isn't used in the project as distributed, because the JavaScript
+code hides the video element. */
+body video {
+    position: absolute;
+    opacity: 0.5;
+}
