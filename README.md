@@ -19,8 +19,23 @@ CSV -> WebSocket server](https://github.com/osteele/optitrack-ws-server).
 
 In a terminal window:
 
-- Change directories (`cd`) into the repository directory.
-- Enter `npm start`
+1. Change directories (`cd`) into the repository directory.
+2. Either:
+   1. Add a `serverUrl` property to the `optitrack.poseNet()` call in
+      `sketch.js`; *or*:
+   2. Run an [OptiTrack CSV -> WebSocket
+      server](https://github.com/osteele/optitrack-ws-server).
+3. Enter `npm start`
+
+If you added `serverUrl` property, the modified code should look like:
+
+```javascript
+  const poseNet = optitrack.poseNet(video, { p5, serverUrl: 'ws://myserver.example.com:8764' },
+    () => p5.select('#status').hide());
+```
+
+where `myserver.example.com` and `8764` are the hostname and port of a WebSocket
+server.
 
 This will open PoseNet in a browser window.
 

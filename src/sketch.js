@@ -31,7 +31,7 @@ export function setup() {
   // The second argument is a function that is called when the model is
   // loaded. It hides the HTML element that displays the "Loading model…" text.
   // const poseNet = ml5.poseNet(video, () => p5.select('#status').hide());
-  const poseNet = optitrack.poseNet(video, { p5, serverUrl: 'ws://mocap.ngrok.io:80' },
+  const poseNet = optitrack.poseNet(video, { p5 },
     () => p5.select('#status').hide());
 
   // Every time we get a new pose, apply the function `drawPoses` to it
